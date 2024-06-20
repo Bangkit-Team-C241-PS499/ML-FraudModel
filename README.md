@@ -1,32 +1,32 @@
 # ML-FraudModel
 
 ## Dataset
-Dataset yang digunakan dalam proyek ini berupa pesan teks dalam Bahasa Indonesia yang masing-masing memiliki label. Dataset ini terdiri dari 1143 pesan teks yang dikategorikan ke dalam tiga label: Normal, Penipuan, dan Promo. Setiap pesan teks memiliki satu label yang sesuai dengan kontennya. Berikut adalah distribusi jumlah pesan teks untuk setiap label: Normal (569 pesan), Penipuan (335 pesan), dan Promo (239 pesan).
+The dataset used in this project is Indonesian text messages, each of which has a label. This dataset consists of 1143 text messages categorized into three labels: Normal, Fraud, and Promo. Each text message has one label that corresponds to its content. The following is the distribution of the number of text messages for each label: Normal (569 messages), Fraud (335 messages), and Promo (239 messages).
 ## Preprocessing
-Untuk memastikan data siap digunakan dalam pelatihan model machine learning, kami melakukan beberapa langkah preprocessing sebagai berikut:
-- Lowercase: Semua teks diubah menjadi huruf kecil untuk menghindari perbedaan antara huruf besar dan kecil.
-- Remove Punctuation: Tanda baca dihapus untuk membersihkan teks.
-- Remove Extra Spaces: Spasi berlebih dihapus untuk konsistensi.
-- Stopword Removal: Menggunakan modul Sastrawi, kami menghapus stopword Bahasa Indonesia yang tidak memiliki makna penting dalam konteks analisis teks.
-- Stemming: Kata-kata diubah ke bentuk dasarnya menggunakan modul Sastrawi Serta kata-kata yang disingkat diubah ke bentuk aslinya menggunakan kamus slang yang disimpan dalam file slang.txt.
-- Tokenisasi: Teks dipecah menjadi kata-kata atau token untuk memudahkan analisis lebih lanjut.
+To ensure the data is ready to be used in training machine learning models, we perform several preprocessing steps as follows:
+- Lowercase: All text is converted to lowercase to avoid the distinction between uppercase and lowercase letters.
+- Remove Punctuation: Punctuation marks are removed to clean up the text.
+- Remove Extra Spaces: Excess spaces are removed for consistency.
+- Stopword Removal: Using the Literature module, we remove Indonesian stopwords that have no important meaning in the context of text analysis.
+- Stemming: Words are converted to their base form using the Literature module as well as abbreviated words are converted to their original form using the slang dictionary stored in the slang.txt file.
+- Tokenization: The text is broken down into words or tokens to facilitate further analysis.
 ## Make Classification Model
-Label teks dalam dataset diubah ke dalam bentuk integer agar lebih mudah diproses oleh model machine learning. Berikut adalah mapping label:
+The text labels in the dataset are converted into integer form to make it easier to process by machine learning models. Here is the label mapping:
 * Normal: 0
 *	Penipuan: 1
 *	Promo: 2
 
-Untuk membangun model klasifikasi, kami menggunakan arsitektur Bidirectional Long Short Term Memory (BiLSTM). Arsitektur ini dipilih karena kemampuannya dalam menangkap dependensi jangka panjang dalam teks, yang penting untuk analisis teks berbahasa alami. Berikut adalah detail arsitektur model yang digunakan:
+To build the classification model, we used the Bidirectional Long Short Term Memory (BiLSTM) architecture. This architecture was chosen for its ability to capture long-term dependencies in text, which is important for natural language text analysis. Here are the details of the model architecture used:
 
-`Arsitektur Model`
-*	Embedding Layer: Mengubah kata-kata dalam teks menjadi representasi vektor.
-*	SpatialDropout1D Layer: Menambahkan dropout untuk mengurangi overfitting.
-* Bidirectional LSTM Layer: Menangkap konteks dari kedua arah (maju dan mundur) dalam teks.
-*	Dense Layer: Layer fully connected untuk menghasilkan prediksi akhir.
-*	Activation Function: Menggunakan softmax untuk menghasilkan probabilitas untuk setiap kelas.
+`Model Architecture`
+* Embedding Layer: Converts the words in the text into a vector representation.
+* SpatialDropout1D Layer: Adds dropout to reduce overfitting.
+* Bidirectional LSTM Layer: Captures context from both directions (forward and backward) in the text.
+* Dense Layer: Fully connected layers to generate the final prediction.
+* Activation Function: Uses softmax to generate probabilities for each class.
 
 ## Evaluation
-Model dilatih menggunakan optimizer Adam dengan learning rate 0.001 dan categorical cross-entropy sebagai loss function. Setelah proses pelatihan, model mencapai akurasi validasi sebesar 92%.
-Berikut Gambaran performa model setiap epoch
+The model was trained using the Adam optimizer with a learning rate of 0.001 and categorical cross-entropy as the loss function. After the training process, the model achieved a validation accuracy of 92%.
+The following is an overview of the model performance for each epoch
 
-Didapatkan matriks konfusi sebagai berikut
+The following confusion matrix is obtained
