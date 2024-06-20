@@ -29,7 +29,7 @@ To build the classification model, we used the Bidirectional Long Short Term Mem
 The model was trained using the Adam optimizer with a learning rate of 0.001 and categorical cross-entropy as the loss function. After the training process, the model achieved a validation accuracy of 92%.
 
 The following is an overview of the model performance for each epoch
-![Performance](relative%20https://github.com/Bangkit-Team-C241-PS499/ML-FraudModel/blob/main/Others/graphic%20model.png?raw=true "Title")
+![Performance](ttps://github.com/Bangkit-Team-C241-PS499/ML-FraudModel/blob/main/Others/graphic%20model.png)
 
 The following confusion matrix is obtained
-![Confusion Matrix](relative%20https://github.com/Bangkit-Team-C241-PS499/ML-FraudModel/blob/main/Others/confusion%20matrix%20model.png?raw=true "Title")
+![Confusion Matrix](ttps://github.com/Bangkit-Team-C241-PS499/ML-FraudModel/blob/main/Others/graphic%20model.png)
