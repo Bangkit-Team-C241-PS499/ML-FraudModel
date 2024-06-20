@@ -15,13 +15,16 @@ Label teks dalam dataset diubah ke dalam bentuk integer agar lebih mudah diprose
 * Normal: 0
 *	Penipuan: 1
 *	Promo: 2
+
 Untuk membangun model klasifikasi, kami menggunakan arsitektur Bidirectional Long Short Term Memory (BiLSTM). Arsitektur ini dipilih karena kemampuannya dalam menangkap dependensi jangka panjang dalam teks, yang penting untuk analisis teks berbahasa alami. Berikut adalah detail arsitektur model yang digunakan:
+
 `Arsitektur Model`
 *	Embedding Layer: Mengubah kata-kata dalam teks menjadi representasi vektor.
 *	SpatialDropout1D Layer: Menambahkan dropout untuk mengurangi overfitting.
 * Bidirectional LSTM Layer: Menangkap konteks dari kedua arah (maju dan mundur) dalam teks.
 *	Dense Layer: Layer fully connected untuk menghasilkan prediksi akhir.
 *	Activation Function: Menggunakan softmax untuk menghasilkan probabilitas untuk setiap kelas.
+
 ## Evaluation
 Model dilatih menggunakan optimizer Adam dengan learning rate 0.001 dan categorical cross-entropy sebagai loss function. Setelah proses pelatihan, model mencapai akurasi validasi sebesar 92%.
 Berikut Gambaran performa model setiap epoch
